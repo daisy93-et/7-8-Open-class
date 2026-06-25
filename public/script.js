@@ -26,8 +26,10 @@ function addMessage(role, content) {
 }
 
 function speak(text) {
-  if (!speakReplies.checked || !('speechSynthesis' in window)) return;
+  function speak(text) {
+  alert("Speak function called");
 
+  if (!speakReplies.checked || !('speechSynthesis' in window)) return;
   window.speechSynthesis.cancel();
 
   const utterance = new SpeechSynthesisUtterance(text);
