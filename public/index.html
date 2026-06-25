@@ -1,1 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daisy Speaking Chatbot</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="card">
+      <h1>Daisy Speaking Chatbot</h1>
+      <p class="subtitle">Practice English prohibition expressions by speaking.</p>
 
+      <div class="scenario-box">
+        <button id="travelBtn" class="scenario active">Scenario 1: Travel Rules</button>
+        <button id="staycationBtn" class="scenario">Scenario 2: Staycation Rules</button>
+      </div>
+
+      <div class="voice-panel">
+        <button id="micBtn" type="button" class="mic">🎤 Speak</button>
+        <button id="stopVoiceBtn" type="button">Stop Voice</button>
+        <label class="speak-toggle"><input id="speakReplies" type="checkbox" checked /> Read AI replies aloud</label>
+      </div>
+      <p id="voiceStatus" class="status">Tap 🎤 Speak and say your sentence in English.</p>
+
+      <div id="chat" class="chat"></div>
+
+      <form id="chatForm" class="input-row">
+        <input id="messageInput" type="text" placeholder="Type or use the mic..." autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+
+      <div class="helper">
+        <button id="startBtn" type="button">Start / Restart</button>
+        <button id="hintBtn" type="button">Give me a hint</button>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
