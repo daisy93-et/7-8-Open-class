@@ -21,6 +21,20 @@ function addMessage(role, content) {
   const div = document.createElement('div');
   div.className = `message ${role}`;
   div.textContent = content;
+
+  if (role === 'assistant') {
+    const listenBtn = document.createElement('button');
+    listenBtn.textContent = '🔊 Listen';
+    listenBtn.type = 'button';
+    listenBtn.className = 'listen-btn';
+    listenBtn.addEventListener('click', () => {
+      speak(content);
+    });
+
+    div.appendChild(document.createElement('br'));
+    div.appendChild(listenBtn);
+  }
+
   chat.appendChild(div);
   chat.scrollTop = chat.scrollHeight;
 }
