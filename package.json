@@ -1,0 +1,17 @@
+{
+  "name": "daisy-speaking-chatbot",
+  "version": "1.0.0",
+  "description": "Scenario-based English speaking chatbot for high school students",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "openai": "latest",
+    "cors": "latest",
+    "dotenv": "latest",
+    "express": "latest"
+  }
+}

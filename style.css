@@ -1,0 +1,81 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f7;
+  color: #222;
+}
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+.card {
+  width: min(760px, 100%);
+  background: #fff;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+h1 { margin: 0; font-size: 28px; }
+.subtitle { margin-top: 8px; color: #666; }
+.scenario-box, .voice-panel, .helper {
+  display: flex;
+  gap: 8px;
+  margin: 14px 0;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.scenario, .helper button, form button, .voice-panel button {
+  border: 0;
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 15px;
+}
+.scenario { background: #ececf1; }
+.scenario.active { background: #222; color: white; }
+.mic { background: #222; color: #fff; }
+.mic.listening { background: #b00020; color: #fff; }
+.voice-panel button, .helper button { background: #ececf1; }
+.voice-panel .mic { background: #222; color: white; }
+.speak-toggle { font-size: 14px; color: #555; }
+.status { min-height: 20px; color: #666; font-size: 14px; margin: 6px 0 10px; }
+.chat {
+  height: 430px;
+  overflow-y: auto;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  padding: 14px;
+  background: #fafafa;
+}
+.message {
+  max-width: 86%;
+  margin: 10px 0;
+  padding: 11px 13px;
+  border-radius: 14px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  font-size: 16px;
+}
+.user { margin-left: auto; background: #222; color: white; }
+.assistant { margin-right: auto; background: #e9e9ee; }
+.input-row { display: flex; gap: 8px; margin-top: 14px; }
+input {
+  flex: 1;
+  padding: 13px 14px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+form button { background: #222; color: white; min-width: 80px; }
+.loading { color: #777; font-style: italic; }
+@media (max-width: 600px) {
+  .card { padding: 16px; border-radius: 0; min-height: 100vh; }
+  .app { padding: 0; align-items: stretch; }
+  .chat { height: 52vh; }
+  h1 { font-size: 24px; }
+  .message { max-width: 94%; }
+}
