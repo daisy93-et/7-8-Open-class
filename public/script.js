@@ -26,18 +26,18 @@ function addMessage(role, content) {
 }
 
 function speak(text) {
-  function speak(text) {
-  alert("Speak function called");
-
   if (!speakReplies.checked || !('speechSynthesis' in window)) return;
+
   window.speechSynthesis.cancel();
 
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = 'en-US';
-  utterance.rate = 0.85;
+  utterance.rate = 0.9;
   utterance.pitch = 1.0;
   utterance.volume = 1.0;
 
+  window.speechSynthesis.speak(utterance);
+}
   const voices = window.speechSynthesis.getVoices();
   const englishVoice = voices.find(v => v.lang.startsWith('en'));
   if (englishVoice) {
