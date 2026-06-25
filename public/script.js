@@ -27,12 +27,24 @@ function addMessage(role, content) {
 
 function speak(text) {
   if (!speakReplies.checked || !('speechSynthesis' in window)) return;
+
   window.speechSynthesis.cancel();
+
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = 'en-US';
-  utterance.rate = 0.9;
+  utterance.rate = 0.85;
   utterance.pitch = 1.0;
-  window.speechSynthesis.speak(utterance);
+  utterance.volume = 1.0;
+
+  const voices = window.speechSynthesis.getVoices();
+  const englishVoice = voices.find(v => v.lang.startsWith('en'));
+  if (englishVoice) {
+    utterance.voice = englishVoice;
+  }
+
+  setTimeout(() => {
+    window.speechSynthesis.speak(utterance);
+  }, 100);
 }
 
 function setStatus(text) {
