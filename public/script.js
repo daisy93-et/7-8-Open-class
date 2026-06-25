@@ -104,7 +104,7 @@ async function sendMessage(content) {
 
     messages.push({ role: 'assistant', content: data.reply });
     addMessage('assistant', data.reply);
-    speak(data.reply);
+   // speak(data.reply);
   } catch (err) {
     loading.remove();
     const msg = 'Sorry, something went wrong. Please ask your teacher.';
